@@ -60,7 +60,6 @@ print("21 Flushing Ave")
 print("Brooklyn, NY 11205")
 print("(347) 694-8510")
 print("www.Wegmans.com")
-print("Don't forget to Download the Wegmans App")
 print("---------------------------------")
 print(dt)
 print("---------------------------------")
@@ -71,15 +70,24 @@ for item_entry in groceries:
     subtotal = subtotal + matching_product[("price")]
     print("............. " + matching_product["name"] + " " + str(matching_product[("price")]))
 
+tax = subtotal * .0875
 
-print("TOTAL PRICE: " + str(subtotal))
+amount_owed = tax + subtotal
+print("---------------------------------")
+print("SUBTOTAL: " + str(subtotal))
+print("TAX: " + str(tax))
+print("TOTAL BILL: " + str(amount_owed))
+print("---------------------------------")
+print("THANKS, SEE YOU AGAIN SOON!")
+print("Don't forget to Download the Wegmans App")
+print("---------------------------------")
 
 # A grocery store name of your choice - YES
 # A grocery store phone number and/or website URL and/or address of choice - YES
 # The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM) - YES
 # The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $3.50, etc.)
 # The total cost of all shopping cart items (i.e. the "subtotal"), formatted as US dollars and cents (e.g. $19.47), calculated as the sum of their prices
-# The amount of tax owed (e.g. $1.70), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
+# The amount of tax owed (e.g. $1.70), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax) - YES
 # The total amount owed, formatted as US dollars and cents (e.g. $21.17), calculated by adding together the amount of tax owed plus the total cost of all shopping cart items
 # A friendly message thanking the customer and/or encouraging the customer to shop again
 
