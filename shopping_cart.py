@@ -1,4 +1,4 @@
-
+from datetime import datetime, date, time, timezone
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -40,6 +40,10 @@ while True:
     else:
         print("Unrecognized Item. Please Re-Enter.")
 
+# Date and Time
+now = datetime.now()
+dt = now.strftime("%A, %B %d, %Y %I:%M %p")
+
 
 #
 # INFO DISPLAY / OUTPUT
@@ -47,18 +51,32 @@ while True:
 
 #print(groceries)
 
+#def to_usd(my_price):
+#    return f"${my_price:,.2f}"
+
+print("---------------------------------")
+print("WEGMANS")
+print("21 Flushing Ave")
+print("Brooklyn, NY 11205")
+print("(347) 694-8510")
+print("www.Wegmans.com")
+print("Don't forget to Download the Wegmans App")
+print("---------------------------------")
+print(dt)
+print("---------------------------------")
+
 for item_entry in groceries:
     matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
     matching_product = matching_products[0]
-    subtotal = subtotal + matching_product["price"]
-    print("............. " + matching_product["name"] + " " + str(matching_product["price"]))
+    subtotal = subtotal + matching_product[("price")]
+    print("............. " + matching_product["name"] + " " + str(matching_product[("price")]))
 
 
 print("TOTAL PRICE: " + str(subtotal))
 
-# A grocery store name of your choice
-# A grocery store phone number and/or website URL and/or address of choice
-# The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM)
+# A grocery store name of your choice - YES
+# A grocery store phone number and/or website URL and/or address of choice - YES
+# The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM) - YES
 # The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $3.50, etc.)
 # The total cost of all shopping cart items (i.e. the "subtotal"), formatted as US dollars and cents (e.g. $19.47), calculated as the sum of their prices
 # The amount of tax owed (e.g. $1.70), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
@@ -121,11 +139,7 @@ print("TOTAL PRICE: " + str(subtotal))
 # Please input a product identifier: 1
 # Please input a product identifier: DONE
 
-# print("---------------------------------")
-# print("WEGMANS")
-# print("www.Wegmans.com")
-# print("Don't forget to Download the Wegmans App")
-# print("---------------------------------")
+
 # #> CHECKOUT AT: 2020-02-07 03:54 PM
 # print("---------------------------------")
 # #> SELECTED PRODUCTS:
