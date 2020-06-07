@@ -25,6 +25,19 @@ products = [
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 
+#
+# INFO CAPTURE/INPUT
+#
+
+item_entry = input("Enter Numeric Item ID Here; When Complete, Enter DONE: ")
+matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
+matching_product = matching_products[0]
+print("SELECTED PRODUCT " + matching_product["name"] + " " + str(matching_product["price"]))
+
+#
+# INFO DISPLAY / OUTPUT
+#
+
 #def purchase_items(i):
        #if i == products["id"]:
     #    return item_entry
@@ -34,19 +47,19 @@ products = [
     #     return ("Invalid entry. Please input product number between 1 and 20 or DONE")
     
 
-def to_usd(my_price):
-    """
-    Converts a numeric value to usd-formatted string, for printing and display purposes.
+# def to_usd(my_price):
+#     """
+#     Converts a numeric value to usd-formatted string, for printing and display purposes.
 
-    Param: my_price (int or float) like 4000.444444
+#     Param: my_price (int or float) like 4000.444444
 
-    Example: to_usd(4000.444444)
+#     Example: to_usd(4000.444444)
 
-    Returns: $4,000.44
-    """
-    return f"${my_price:,.2f}" #> $12,000.71
+#     Returns: $4,000.44
+#     """
+#     return f"${my_price:,.2f}" #> $12,000.71
 
-# TODO: write some Python code here to produce the desired output
+
 
 #print(products)
 
@@ -54,25 +67,25 @@ def to_usd(my_price):
 
 #item_entry = int(input("Enter Numeric Item ID Here, when complete enter DONE: "))
 
-def create_list(i):
-    item_entry = float(input("Enter Numeric Item ID Here; When Complete, Enter DONE: "))
-    groceries = []
-    while "DONE":
-        if i <= 20:
-            return(item_entry)
-        elif i >= 1:
-            return(item_entry)
-        else:
-            return ("Invalid entry." + (item_entry))
-        shopping.append(item_entry)
-    return groceries
+# def create_list(i):
+#     item_entry = float(input("Enter Numeric Item ID Here; When Complete, Enter DONE: "))
+#     groceries = []
+#     while "DONE":
+#         if i <= 20:
+#             return(item_entry)
+#         elif i >= 1:
+#             return(item_entry)
+#         else:
+#             return ("Invalid entry." + (item_entry))
+#         shopping.append(item_entry)
+#     return groceries
 
-print(create_list)
+#print(create_list)
 
-breakpoint()
 
-item = (purchase_items)
-print(item)
+
+# item = (purchase_items)
+# print(item)
 
 # Please input a product identifier: 2
 # Please input a product identifier: 3
@@ -80,23 +93,23 @@ print(item)
 # Please input a product identifier: 1
 # Please input a product identifier: DONE
 
-print("---------------------------------")
-print("WEGMANS")
-print("www.Wegmans.com")
-print("Don't forget to Download the Wegmans App")
-print("---------------------------------")
-#> CHECKOUT AT: 2020-02-07 03:54 PM
-print("---------------------------------")
-#> SELECTED PRODUCTS:
-#>  ... Chocolate Sandwich Cookies ($3.50)
-#>  ... All-Seasons Salt ($4.99)
-#>  ... Robust Golden Unsweetened Oolong Tea ($2.49)
-#>  ... All-Seasons Salt ($4.99)
-#>  ... Chocolate Sandwich Cookies ($3.50)
-print("---------------------------------")
-#> SUBTOTAL: $19.47
-#> TAX: $1.70
-#> TOTAL: $21.17
-print("---------------------------------")
-print("THANKS, SEE YOU AGAIN SOON!")
-print("---------------------------------")
+# print("---------------------------------")
+# print("WEGMANS")
+# print("www.Wegmans.com")
+# print("Don't forget to Download the Wegmans App")
+# print("---------------------------------")
+# #> CHECKOUT AT: 2020-02-07 03:54 PM
+# print("---------------------------------")
+# #> SELECTED PRODUCTS:
+# #>  ... Chocolate Sandwich Cookies ($3.50)
+# #>  ... All-Seasons Salt ($4.99)
+# #>  ... Robust Golden Unsweetened Oolong Tea ($2.49)
+# #>  ... All-Seasons Salt ($4.99)
+# #>  ... Chocolate Sandwich Cookies ($3.50)
+# print("---------------------------------")
+# #> SUBTOTAL: $19.47
+# #> TAX: $1.70
+# #> TOTAL: $21.17
+# print("---------------------------------")
+# print("THANKS, SEE YOU AGAIN SOON!")
+# print("---------------------------------")
