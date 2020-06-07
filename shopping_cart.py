@@ -29,10 +29,17 @@ products = [
 # INFO CAPTURE/INPUT
 #
 
-item_entry = input("Enter Numeric Item ID Here; When Complete, Enter DONE: ")
-matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
-matching_product = matching_products[0]
-print("SELECTED PRODUCT " + matching_product["name"] + " " + str(matching_product["price"]))
+while True:
+    item_entry = input("Enter Numeric Item ID Here; When Complete, Enter DONE: ")
+    if item_entry == "DONE":
+        break
+    else:
+        matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
+        matching_product = matching_products[0]
+        print("SELECTED PRODUCT " + matching_product["name"] + " " + str(matching_product["price"]))
+
+
+
 
 #
 # INFO DISPLAY / OUTPUT
