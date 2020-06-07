@@ -1,6 +1,5 @@
 
 
-
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -29,6 +28,8 @@ products = [
 # INFO CAPTURE/INPUT
 #
 
+subtotal = 0
+
 while True:
     item_entry = input("Enter Numeric Item ID Here; When Complete, Enter DONE: ")
     if item_entry == "DONE":
@@ -36,14 +37,15 @@ while True:
     else:
         matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
         matching_product = matching_products[0]
+        subtotal = subtotal + matching_product["price"]
         print("SELECTED PRODUCT " + matching_product["name"] + " " + str(matching_product["price"]))
-
-
 
 
 #
 # INFO DISPLAY / OUTPUT
 #
+
+print("TOTAL PRICCE: " + str(subtotal))
 
 #def purchase_items(i):
        #if i == products["id"]:
