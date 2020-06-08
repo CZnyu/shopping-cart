@@ -36,7 +36,12 @@ products = [
     {"id":18, "name": "Pizza for One Suprema Frozen Pizza", "department": "frozen", "aisle": "frozen pizza", "price": 12.50},
     {"id":19, "name": "Gluten Free Quinoa Three Cheese & Mushroom Blend", "department": "dry goods pasta", "aisle": "grains rice dried goods", "price": 3.99},
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
-]
+] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
+
+
+#
+# INFO CAPTURE/INPUT
+#
 
 subtotal = 0
 groceries = []
@@ -50,6 +55,10 @@ while True:
     else:
         print("Unrecognized Item. Please Re-Enter.")
 
+# Date and Time
+#now = datetime.now()
+#dt = now.strftime("%A, %B %d, %Y %I:%M %p")
+
 
 #
 # INFO DISPLAY / OUTPUT
@@ -57,13 +66,28 @@ while True:
 
 #print(groceries)
 
-#def to_usd(my_price):
-#    return f"${my_price:,.2f}"
+def to_usd(my_price):
+    return f"${my_price:,.2f}"
+
+# print("---------------------------------")
+# print("WEGMANS")
+# print("21 Flushing Ave")
+# print("Brooklyn, NY 11205")
+# print("(347) 694-8510")
+# print("www.Wegmans.com")
+# print("---------------------------------")
+# print(dt)
+# print("---------------------------------")
 
 for item_entry in groceries:
     matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
     matching_product = matching_products[0]
-    for d in matching_product:
-        price_usd = "${0:.2f}".format(d["price"])
-    #subtotal = subtotal + matching_product[(price_usd)]
-    print("............. " + matching_product["name"] + " " + str(price_usd))
+    subtotal = subtotal + matching_product[("price")]
+    print("............. " + matching_product["name"] + " " + str(matching_product[("price")]))
+
+#Sent to ANUSHA
+# for item_entry in groceries:
+#     matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
+#     matching_product = matching_products[0]
+#     subtotal = subtotal + matching_product[("price")]
+#     print("............. " + matching_product["name"] + " " + str(matching_product[to_usd(("price"))]))
