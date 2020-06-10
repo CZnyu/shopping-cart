@@ -99,3 +99,50 @@ amount_owed = tax + subtotal
 print("SUBTOTAL: " + str(to_usd((subtotal))))
 print("TAX: " + str(to_usd(tax)))
 print("TOTAL BILL: " + str(to_usd(amount_owed)))
+
+
+
+
+#def purchase_items(i):
+       #if i == products["id"]:
+    #    return item_entry
+    #elif i == "DONE":
+    #    return ("print receipt")
+    # else:
+    #     return ("Invalid entry. Please input product number between 1 and 20 or DONE")
+    
+
+# def to_usd(my_price):
+#     """
+#     Converts a numeric value to usd-formatted string, for printing and display purposes.
+
+#     Param: my_price (int or float) like 4000.444444
+
+#     Example: to_usd(4000.444444)
+
+#     Returns: $4,000.44
+#     """
+#     return f"${my_price:,.2f}" #> $12,000.71
+
+
+
+#print(products)
+
+#(shopping-env)  --->> python shopping_cart.py
+
+#item_entry = int(input("Enter Numeric Item ID Here, when complete enter DONE: "))
+
+# def create_list(i):
+#     item_entry = float(input("Enter Numeric Item ID Here; When Complete, Enter DONE: "))
+#     groceries = []
+#     while "DONE":
+#         if i <= 20:
+#             return(item_entry)
+#         elif i >= 1:
+#             return(item_entry)
+#         else:
+#             return ("Invalid entry." + (item_entry))
+#         shopping.append(item_entry)
+#     return groceries
+
+=
