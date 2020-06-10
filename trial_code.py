@@ -79,15 +79,23 @@ def to_usd(my_price):
 # print(dt)
 # print("---------------------------------")
 
-for item_entry in groceries:
-    matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
-    matching_product = matching_products[0]
-    subtotal = subtotal + matching_product[("price")]
-    print("............. " + matching_product["name"] + " " + str(matching_product[("price")]))
-
-#Sent to ANUSHA
 # for item_entry in groceries:
 #     matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
 #     matching_product = matching_products[0]
 #     subtotal = subtotal + matching_product[("price")]
-#     print("............. " + matching_product["name"] + " " + str(matching_product[to_usd(("price"))]))
+#     print("............. " + matching_product["name"] + " " + to_usd(str(matching_product[("price"))))
+
+#Sent to ANUSHA
+for item_entry in groceries:
+     matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
+     matching_product = matching_products[0]
+     subtotal = subtotal + matching_product["price"]
+     print("............. " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+
+tax = subtotal * .0875
+
+amount_owed = tax + subtotal
+
+print("SUBTOTAL: " + str(to_usd((subtotal))))
+print("TAX: " + str(to_usd(tax)))
+print("TOTAL BILL: " + str(to_usd(amount_owed)))

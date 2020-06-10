@@ -51,8 +51,8 @@ dt = now.strftime("%A, %B %d, %Y %I:%M %p")
 
 #print(groceries)
 
-#def to_usd(my_price):
-#    return f"${my_price:,.2f}"
+def to_usd(my_price):
+    return f"${my_price:,.2f}"
 
 print("---------------------------------")
 print("WEGMANS")
@@ -65,18 +65,19 @@ print(dt)
 print("---------------------------------")
 
 for item_entry in groceries:
-    matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
-    matching_product = matching_products[0]
-    subtotal = subtotal + matching_product[("price")]
-    print("............. " + matching_product["name"] + " " + str(matching_product[("price")]))
+     matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
+     matching_product = matching_products[0]
+     subtotal = subtotal + matching_product["price"]
+     print("............. " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
 
 tax = subtotal * .0875
 
 amount_owed = tax + subtotal
+
 print("---------------------------------")
-print("SUBTOTAL: " + str(subtotal))
-print("TAX: " + str(tax))
-print("TOTAL BILL: " + str(amount_owed))
+print("SUBTOTAL: " + str(to_usd((subtotal))))
+print("TAX: " + str(to_usd(tax)))
+print("TOTAL BILL: " + str(to_usd(amount_owed)))
 print("---------------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("Don't forget to Download the Wegmans App")
