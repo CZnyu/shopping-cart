@@ -34,6 +34,10 @@ while True:
     item_entry = input("Enter Numeric Item ID Here; When Complete, Enter DONE: ")
     if item_entry == "DONE":
         break
+    elif item_entry == "done":
+        break
+    elif item_entry == "Done":
+        break
     elif [p for p in products if str(p["id"]) == item_entry]:
         groceries.append(item_entry)
     else:
@@ -66,7 +70,7 @@ for item_entry in groceries:
      matching_products = [i for i in products if str(i["id"]) == str(item_entry)]
      matching_product = matching_products[0]
      subtotal = subtotal + matching_product["price"]
-     print("............. " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+     print(" + " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
 
 tax = subtotal * .0875
 
@@ -76,6 +80,7 @@ print("---------------------------------")
 print("SUBTOTAL: " + str(to_usd((subtotal))))
 print("TAX: " + str(to_usd(tax)))
 print("TOTAL BILL: " + str(to_usd(amount_owed)))
+print("TOTAL ITEMS PURCHASED: " + str(len(groceries)))
 print("---------------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("Don't forget to Download the Wegmans App")
