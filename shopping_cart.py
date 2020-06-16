@@ -33,7 +33,7 @@ while True:
 # Date and Time
 now = datetime.now()
 dt = now.strftime("%A, %B %d, %Y %I:%M %p")
-
+#source: https://docs.python.org/3/library/datetime.html
 #
 # INFO DISPLAY / OUTPUT
 #
